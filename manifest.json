@@ -1,0 +1,45 @@
+{
+  "applications": {
+  "gecko": {
+    "id": "samyyounsi@hotmail.fr"
+    }
+  },
+
+  "manifest_version": 2,
+  "name": "E-Staffing",
+  "version": "1.0",
+
+  "description": "e-staffing auto login",
+
+  "icons": {
+    "48": "icons/logo-140-40.png"
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "storage",
+    "webRequest",
+    "*://developer.mozilla.org/*",
+    "*://localhost/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/logo-140-40.png",
+    "default_title": "E-Staffing Auto Logger",
+    "default_popup": "popup/index.html"
+  },
+  
+
+  "web_accessible_resources": [
+    "beasts/frog.jpg",
+    "beasts/turtle.jpg",
+    "beasts/snake.jpg",
+    "content_script/info.json"
+  ],
+
+  "background": {
+    "scripts": ["content_script/background.js"]
+  }
+
+}

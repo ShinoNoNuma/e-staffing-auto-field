@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+<body>
+  <div class="container" id="estaffingMainContainer">
+    <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h2><a href="https://timecard2.e-staffing.ne.jp/000_002.cfm" title="Login to e-staffing"><img src="/icons/logo-140-40.png" alt="e-staffing logo" class="img-responsive"></a> Auto Logger</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#login-tab" data-toggle="tab">Login</a>
+          </li>
+          <li>
+            <a href="#working-tab" data-toggle="tab">Working Time</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="login-tab">
+            <div class="container" id="estaffingLoginContainer">
+              <div class="row clearfix">
+                <div class="col-md-12 column">
+                  <p id="information">Please enter your login information below</p>
+                  <p id="note">*Note: your connection information will be encrypted</p>
+                  <div id="alertBoxLogin" class="alert alert-success alert-dismissible hidden">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> Your informations has been saved.
+                  </div>
+                <div class="form-group">
+                   <label for="cid">企業ID / Company ID:</label>
+                    <input type="text" id="cid" class="form-control" placeholder="Company ID" name="cid">
+                </div>
+                <div class="form-group">
+                  <label for="userid">ユーザID / User ID:</label>
+                  <input type="text" id="userid" class="form-control" placeholder="User ID" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">パスワード / Password:</label>
+                  <input type="password" id="pwd" class="form-control" placeholder="Password" name="pwd">
+                </div>
+                <div class="form-group">
+                  <button type="button" id="save" class="btn btn-block btn-primary">Save</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="working-tab">
+            <div class="container" id="estaffingWorkingTimeContainer">
+              <div class="row clearfix">
+                <div class="col-md-12 column">
+                  <div id="alertBoxWorkingTime" class="alert alert-success alert-dismissible hidden">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> Your working time has been saved.
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="starthh">開始時刻 / Start Time (HH):</label>
+                          <input type="text" id="starthh" class="form-control" placeholder="Hours" name="starthh">
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="startmm">開始時刻 / Start Time (MM):</label>
+                          <input type="number" id="startmm" class="form-control" placeholder="Minutes" name="startmm" maxlength="2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="endhh">終了時刻 / End Time (HH):</label>
+                          <input type="number" id="endhh" class="form-control" placeholder="Hours" name="endhh" maxlength="2">
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="endmm">終了時刻 / End Time (MM):</label>
+                          <input type="number" id="endmm" class="form-control" placeholder="Minutes" name="endmm" maxlength="2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="resthh">休憩時間 / Rest Time (HH):</label>
+                          <input type="number" id="resthh" class="form-control" placeholder="Hours" name="resthh" maxlength="2">
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="input-group">
+                          <label for="restmm">休憩時間 / Rest Time (HH):</label>
+                          <input type="number" id="restmm" class="form-control" placeholder="Minutes" name="restmm" maxlength="2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <button type="button" id="saveWorkingTime" class="btn btn-block btn-primary">Save Working Time</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
