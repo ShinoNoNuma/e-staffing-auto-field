@@ -33,6 +33,12 @@ function login(tabId){
             var errorMsg = "Company ID, User ID or the password is invalid."; 
           if (getErrorMsg == errorMsg){ alert("The Company ID, User ID or the password save in the e-staffing addon is wrong. Please make sure your account is valid and try again."); } else { document.querySelector("form")[0].value = '${results.login.cid}';document.querySelector("form")[1].value = '${results.login.user_id}';document.querySelector("form")[2].value = '${results.login.pwd}'; document.main_form.lang_hidden.value = 2;document.main_form.action = "function/loginchk.cfm";document.main_form.submit();}`
         });
+
+        chrome.storage.sync.set({
+          "info": {
+            "lastLogin": new Date(), 
+          }
+        });
       }
     }
   });

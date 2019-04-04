@@ -65,8 +65,7 @@
           "cid": cidValue,
           "user_id": useridValue,
           "pwd": pwdValue,
-          "updated": updated,
-          "lastLogin": lastLogin 
+          "updated": updated
         }
       });
     ev.preventDefault();
@@ -81,16 +80,16 @@
 
   function validationWorkingTimeInput() {
     if (starthhField.value.length === 0 || startmmField.value.length === 0 || endhhField.value.length === 0 || endmmField.value.length === 0 || resthhField.value.length === 0 || restmmField.value.length === 0) {
-          saveWorkingTimeButton.disabled = true;  
+        saveWorkingTimeButton.disabled = true;  
+    } else {
+      if (starthhField.value > 24 || startmmField.value > 60 || endhhField.value > 24 || endmmField.value > 60 || resthhField.value > 24 || restmmField.value > 60) {
+        
+        saveWorkingTimeButton.disabled = true;
       } else {
-        if (starthhField.value > 24 || startmmField.value > 60 || endhhField.value > 24 || endmmField.value > 60 || resthhField.value > 24 || restmmField.value > 60) {
-          console.log(starthhField.value);
-          saveWorkingTimeButton.disabled = true;
-        } else {
-          saveWorkingTimeButton.disabled = false;
-        }
+        saveWorkingTimeButton.disabled = false;
       }
     }
+  }
 
 
   function validationLoginInput() {
@@ -121,12 +120,29 @@
   });
 
   chrome.storage.sync.get("login", function(results) {
-    if(results.hasOwnProperty("login")){
+    if(results.hasOwnProperty("login")) {
       document.getElementById("information").classList.add("hidden");
       document.getElementById("note").classList.add("hidden");
+      document.getElementById("loginBtn").classList.remove("hidden");
       cidField.value = results.login.cid;
       useridField.value = results.login.user_id;
-      pwdField.value = results.login.pwd;        
+      pwdField.value = results.login.pwd;
+      document.getElementById("passwordUpdated").textContent = results.login.updated;    
+    } else {
+      document.querySelector("[href='#info-tab']").parentElement.classList.remove("active");
+      document.querySelector("[href='#login-tab']").parentElement.classList.add("active");
+      document.getElementById("info-tab").classList.remove("active");
+      document.getElementById("login-tab").classList.add("active");
+    }
+  });
+
+  chrome.storage.sync.get("info", function(results) {
+    if(results.hasOwnProperty("info")){
+      if(results.info.lastLogin.length != 0){
+        document.getElementById("lastlogin").textContent = results.info.lastLogin;
+      } else{
+        document.getElementById("lastlogin").textContent = "Never.";
+      }  
     }
   });
 

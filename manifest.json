@@ -8,7 +8,6 @@
   "manifest_version": 2,
   "name": "E-Staffing",
   "version": "1.0",
-
   "description": "e-staffing auto login",
 
   "icons": {
@@ -19,9 +18,7 @@
     "<all_urls>",
     "activeTab",
     "storage",
-    "webRequest",
-    "*://developer.mozilla.org/*",
-    "*://localhost/*"
+    "webRequest"
   ],
 
   "browser_action": {
@@ -30,16 +27,7 @@
     "default_popup": "popup/index.html"
   },
   
-
-  "web_accessible_resources": [
-    "beasts/frog.jpg",
-    "beasts/turtle.jpg",
-    "beasts/snake.jpg",
-    "content_script/info.json"
-  ],
-
   "background": {
     "scripts": ["content_script/background.js"]
   }
-
 }
