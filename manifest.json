@@ -7,7 +7,7 @@
 
   "manifest_version": 2,
   "name": "E-Staffing",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "e-staffing auto login",
 
   "icons": {
